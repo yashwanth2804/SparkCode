@@ -38,10 +38,11 @@ public class AggFold {
 
 		}));
 
-		System.out.println(_Fold);
+	//	System.out.println(_Fold);
 
 		// FoldBykey
 
+		/***
 		JavaPairRDD<String, Integer> _Foldbykey = wordMap_to_pair.foldByKey(0, ((acc, val) -> {
 			if (acc > val)
 
@@ -51,6 +52,9 @@ public class AggFold {
 				return val;
 
 		}));
+		*/
+		
+		JavaPairRDD<String, Integer> _Foldbykey = wordMap_to_pair.foldByKey(0, ((acc, val) -> acc+val));
 
 		System.out.println(_Foldbykey.collect());
 		
@@ -62,7 +66,7 @@ public class AggFold {
  				, ( (a,v) -> a+v )); // merge
  
  	 
- 	System.out.println(_aggreagteBykey.collect());
+ 	//System.out.println(_aggreagteBykey.collect());
  
 		
 		

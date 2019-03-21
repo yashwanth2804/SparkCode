@@ -61,8 +61,8 @@ public class GroupbyTF {
 		 
 		 
 		 
- 	 wordMap_to_pair
- 		 .mapValues( v -> v*10)
+ 	 _groupByKey
+ 		 .mapValues( v -> Iterables.size(v))
  	 .collect() 
  		 .forEach(f -> System.out.println(f));
 		  
